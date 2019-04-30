@@ -48,4 +48,4 @@ By treating your changes as events you can have any level of granularity you nee
 
 On my next post I'll show you one way we can do it in Elixir using _Ecto Changesets_ and _Phoenix **Contexts**_.
 
-_Many thanks to Allan Jorge, @gustavoaguiar and @tyurok from [Elixir Brazil [OffTopic] @ Telegram](https://t.me/elixirbr_offtopic) for helping me overcome my writing block / fear of writing this first post._
+_Many thanks to Allan Jorge, @gustavoaguiar and @tyurok from_ [_Elixir Brazil OffTopic @ Telegram_](https://t.me/elixirbr_offtopic) _for helping me overcome my writing block / fear of writing this first post._
