@@ -11,7 +11,7 @@ All these possibilities result in the order cancellation. Behind the scenes the 
 
 ## Sometimes knowing _Which_ data changed isn't enough. It's important to know _Why_ it changed.
 
-If you only know that some data changed you're losing insight about your application. Not knowing **why** it changed you can't act upon it. You lose context.
+If you only know that some data changed, you're losing insight about your application. Not knowing **why** it changed, makes you unable to act upon it.
 
 By treating your changes as events you can have any level of granularity you need not only to know what changed and who changed, but most importantly **why it changed**.
 
@@ -46,6 +46,6 @@ By treating your changes as events you can have any level of granularity you nee
 }
 ```
 
-On my next post I'll show you one way we can do it in Elixir using _Ecto Changesets_ and _Phoenix **Contexts**_.
+On the next post I'll show one way you can do it in Elixir using _Ecto Changesets_ and _Phoenix **Contexts**_.
 
 _Many thanks to Allan Jorge, @gustavoaguiar and @tyurok from_ [_Elixir Brazil OffTopic @ Telegram_](https://t.me/elixirbr_offtopic) _for helping me overcome my writing block / fear of writing this first post._
