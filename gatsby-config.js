@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Luiz Damim's Blog`,
+    title: `Alchemy Reaction`,
     author: `Luiz Damim`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Personal site by Luiz Damim. Words that fade into the air.`,
     siteUrl: `https://luizdamim.com`,
     social: {
       twitter: `luizdamim`,
