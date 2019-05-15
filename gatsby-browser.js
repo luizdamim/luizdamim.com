@@ -2,7 +2,9 @@
 import "typeface-montserrat"
 import "typeface-merriweather"
 
-require("prismjs/themes/prism.css")
-require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+import "./src/components/layout.css"
+
+import "prismjs/themes/prism.css"
+import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 // require("prismjs/themes/prism-tomorrow.css")
 // require("prismjs/themes/prism-solarizedlight.css")
