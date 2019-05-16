@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Alchemy Reaction`,
     author: `Luiz Damim`,
-    description: `Personal site by Luiz Damim. Words that fade into the air.`,
+    description: `Personal site by Luiz Damim. Trying to fix code by turning it off and on again.`,
     siteUrl: `https://luizdamim.com`,
     social: {
       twitter: `luizdamim`,
@@ -47,6 +47,7 @@ module.exports = {
               showLineNumbers: false,
             },
           },
+          "gatsby-remark-copy-linked-files",
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
@@ -81,5 +82,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    "gatsby-plugin-catch-links",
   ],
 }
