@@ -1,7 +1,7 @@
 ---
 title: Tracking changes with context
 date: "2019-05-01"
-description: "The what, who and why of keeping track of data changes"
+description: "What, who and why of keeping track of data changes"
 # tags: ["elixir", "phoenix", "ecto"]
 ---
 
