@@ -5,13 +5,13 @@ description: "Saving data changes in Phoenix and Ecto as events"
 tags: ["elixir", "phoenix", "ecto"]
 ---
 
-In the [previous post](/blog/tracking-changes-with-context) we discussed why it's important to add context to the application's data changes. Now we're going to see how we can do that in Elixir with Phoenix and Ecto.
+In the [previous post](/blog/tracking-changes-with-context), we discussed why it's important to add context to the application's data changes. Now we're going to see how we can do that in Elixir with Phoenix and Ecto.
 
 ## Adding context to Context
 
 ![What does that even mean?](what-does-that-even-mean.jpg "What does that even mean?")
 
-Context is an overloaded term, specially in programming. Let's see the two definitions we will be using:
+Context is an overloaded term, especially in programming. Let's see the two definitions we will be using:
 
 **Context:**
 
@@ -25,11 +25,11 @@ Context is an overloaded term, specially in programming. Let's see the two defin
 >
 > ([Phoenix docs](https://hexdocs.pm/phoenix/contexts.html))
 
-They mean different things, but work really well together organizing and giving meaning to what can happen and why it happened. From now on I'll refer to _contexts_ with the meaning of _explaining a situation or something that happened_ as **events**.
+They mean different things but work really well together organizing and giving meaning to what can happen and why it happened. From now on I'll refer to _contexts_ with the meaning of _explaining a situation or something that happened_ as **events**.
 
 ## Cancelling an order
 
-Following our previous example of an online shop, we have two Phoenix Contexts: `Accounts` and `Sales`. In `Accounts` we have a `User` schema and in `Sales`, `Client` and `Order` schemas.
+Following our previous example of an online shop, we have two Phoenix Contexts: `Accounts` and `Sales`. In `Accounts`, we have a `User` schema and in `Sales`, `Client` and `Order` schemas.
 
 To cancel an order we could have a `Sales.cancel_order/1` function as simple as:
 
@@ -107,19 +107,19 @@ We are using the `Audit` module and setting some options, including the `events`
 
 There's only one event, `order_cancelled`, but we could have many more: `item_removed`, `payment_type_changed`, `shipping_address_changed` and so on.
 
-I usually have multiple audit modules inside a context, one for each _sub context_.
+I usually have multiple audit modules inside a context, one for each _subcontext_.
 
-**Sub context?**
+**Subcontext?**
 
 ![WE NEED TO GO DEEPER](we-need-to-go-deeper.jpg "WE NEED TO GO DEEPER")
 
 For those familiar with [DDD](https://en.wikipedia.org/wiki/Domain-driven_design), they are like [aggregate roots](https://martinfowler.com/bliki/DDD_Aggregate.html).
 
-The `Order` schema is composed of other smaller schemas that makes no sense existing outside it, like order items and payments. So the `Order` _aggregates_ this additional data, and as the most important one, it is the _root_, hence _Aggregate Root_. But I like to call them _sub contexts_ because the terminology is closer to Phoenix Contexts. :)
+The `Order` schema is composed of other smaller schemas that make no sense existing outside it, like order items and payments. So the `Order` _aggregates_ this additional data, and as the most important one, it is the _root_, hence _Aggregate Root_. But I like to call them _subcontexts_ because the terminology is closer to Phoenix Contexts. :)
 
 Can you come with another good candidate for a sub context in `Sales` context?
 
-**IMPORTANT:** a sub context is an internal concept and should only be interacted with from it's parent context. In this example, all calls from outside will still happen to `Sales` context.
+**IMPORTANT:** a sub context is an internal concept and should only be interacted with from its parent context. In this example, all calls from outside will still happen to `Sales` context.
 
 _Caveat: an Ecto schema should be a simple mapping between a data source and an Elixir struct, but I couldn't find a better place for this example. In my actual application I organize my contexts a little different so this doesn't happen. I'll write about it in the future._
 
@@ -268,6 +268,6 @@ The `event/3` and `event/4` functions delegate the calls to the `event/5` inside
 - a `struct`: all fields from the struct are added to the metadata
 - a `map`: anything you need to contextualize the event. Take care to put only what's necessary, adding too little or too much hinders your ability to see what happened clearly
 
-At first it may seem too much work to manually create the callback functions and build the events, but it pays off. The event log gives you multiple benefits: you can show the changes in a timeline, store changes over time for accountability reasons, have a traceability of changes for security, an much more.
+At first, it may seem too much work to manually create the callback functions and build the events, but it pays off. The event log gives you multiple benefits: you can show the changes in a timeline, store changes over time for accountability reasons, have traceability of changes for security, an much more.
 
 I'm using this in one of my applications and it's been a blast.
