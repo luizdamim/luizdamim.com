@@ -1,7 +1,7 @@
 ---
 title: Tracking changes with context using Phoenix and Ecto
 date: "2019-05-16"
-description: "Saving data changes in Phoenix and Ecto as events"
+description: "Saving data changes in Phoenix and Ecto as events."
 tags: ["elixir", "phoenix", "ecto"]
 ---
 
